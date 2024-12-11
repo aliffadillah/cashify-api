@@ -3,18 +3,12 @@
 ## GET DASHBOARD
 
 **Method:** `GET`  
-**Endpoint:** `/api/dashboard/{id_profile}`
+**Endpoint:** `api/dashboard/{id_profile}/{dateTime}`
 
 ### Request:
 
 ```json
 Headers: Authorization Bearer Token
-```
-
-```json
-{
-  "dateTime": "DD-MM-YYYY"
-}
 ```
 
 ### Response:

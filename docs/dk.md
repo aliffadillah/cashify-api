@@ -36,7 +36,7 @@ Headers: Authorization Bearer Token
 ## History
 
 **Method:** `GET`  
-**Endpoint:** `/api/data/{id_profile}/history`
+**Endpoint:** `api/data/<id_profile>/history/<dateTime>`
 
 ### Request:
 
@@ -44,11 +44,6 @@ Headers: Authorization Bearer Token
 Headers: Authorization Bearer Token
 ```
 
-```json 
-{
-  "dateTime": "MM-YYYY"
-}
-```
 
 ### Response:
 

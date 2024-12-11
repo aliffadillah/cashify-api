@@ -3,6 +3,6 @@ const { getDashboard } = require('./dashboard.controller');
 
 const router = express.Router();
 
-router.get('/:id_profile', getDashboard);
+router.get('/:id_profile/:monthYear', getDashboard);
 
 module.exports = router;

@@ -14,7 +14,8 @@ const inputDataKeuangan = async (req, res) => {
 
 const getHistoryData = async (req, res) => {
     try {
-        const history = await getHistory(req.user.id, req.body.dateTime);
+        const { id_profile, dateTime } = req.params; // Ambil dateTime dari parameter
+        const history = await getHistory(id_profile, dateTime);
         res.status(200).json({ data: history });
     } catch (error) {
         if (error.message === "Tidak ada data") {
@@ -24,6 +25,7 @@ const getHistoryData = async (req, res) => {
         }
     }
 };
+
 
 const getHistoryDetailsData = async (req, res) => {
     try {

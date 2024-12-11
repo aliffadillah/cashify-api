@@ -53,7 +53,7 @@ const getDashboardData = async (id_profile, monthYear) => {
 
     const { labaKotor, bayarGaji, bayarAir, biayaListrik, biayaTransport, biayaPromosi, biayaPackaging, biayaPajak } = totals;
 
-    const mlResponse = await axios.post('http://localhost:8080/process', {
+    const mlResponse = await axios.post('https://cashify-model1-166755984338.asia-southeast1.run.app/process', {
         labaKotor,
         bayarGaji,
         bayarAir,

@@ -2,8 +2,7 @@ const { getDashboardData } = require('./dashboard.service');
 
 const getDashboard = async (req, res) => {
     try {
-        const { id_profile } = req.params;
-        const { monthYear } = req.body;
+        const { id_profile, monthYear } = req.params; // Ambil dari parameter URL
 
         if (!id_profile || !monthYear) {
             return res.status(400).json({ error: "id_profile and monthYear are required" });

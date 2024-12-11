@@ -17,14 +17,17 @@ const createDataKeuangan = async (id_profile, data) => {
 };
 
 const getHistory = async (id_profile, dateTime) => {
-  const [month, year] = dateTime.split("-");
+  if (!dateTime || !/^\d{2}-\d{4}$/.test(dateTime)) {
+    throw new Error("Format tanggal tidak valid. Gunakan format MM-YYYY.");
+  }
 
+  const [month, year] = dateTime.split("-");
   const startDate = new Date(year, month - 1, 1);
   const endDate = new Date(year, month, 0);
 
   const result = await prisma.dataKeuangan.findMany({
     where: {
-      id_profile,
+      id_profile: parseInt(id_profile, 10),
       dateAdded: {
         gte: startDate,
         lte: endDate,
@@ -38,6 +41,7 @@ const getHistory = async (id_profile, dateTime) => {
 
   return result;
 };
+
 
 const getHistoryDetails = async (id_profile, id_data) => {
   const idProfile = parseInt(id_profile, 10);

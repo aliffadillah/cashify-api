@@ -1,5 +1,5 @@
 # Gunakan image Node.js resmi sebagai base image
-FROM node:18
+FROM node:20
 
 # Set working directory dalam container
 WORKDIR /usr/src/app
@@ -15,7 +15,6 @@ COPY . .
 
 # Jalankan Prisma migrate dan generate setelah semua file tersalin
 RUN npx prisma generate
-RUN npx prisma migrate deploy
 
 # Ekspos port yang digunakan aplikasi
 EXPOSE 3000
