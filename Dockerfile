@@ -1,5 +1,5 @@
 # Gunakan image Node.js resmi sebagai base image
-FROM node:18-alpine
+FROM node:18
 
 # Set working directory dalam container
 WORKDIR /usr/src/app
